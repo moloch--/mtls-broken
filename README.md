@@ -5,9 +5,9 @@ This repo demonstrates that Node version after 14.15.3 cannot connect to a Go-ba
 
 ### Instructions
 
-1. Compile server with `go build .` and run
+1. Compile server with `go build .` and run `./mtls-broken` from root of Git repo
 2. In `client/` directory run `npm install`
-3. Run client script `node ./helloworld-client.js`
+3. Run client script `node ./helloworld-client.js` using different version of NodeJS
 
 
 ## Node v15.10.0
