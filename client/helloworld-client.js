@@ -8,7 +8,7 @@ var grpc = require('@grpc/grpc-js');
 
 
 var client = new services.GreeterClient("localhost:50051", grpc.credentials.createSsl(
-    fs.readFileSync(path.join(process.cwd(), "..", "ca-cert.pem")), // CA
+    Buffer.from("asdf"), // fs.readFileSync(path.join(process.cwd(), "..", "ca-cert.pem")), // CA
     fs.readFileSync(path.join(process.cwd(), "client-key.pem")), // Private Key
     fs.readFileSync(path.join(process.cwd(), "client-cert.pem")), // Cert
     {

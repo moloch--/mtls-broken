@@ -86,12 +86,12 @@ func getTLSConfig() *tls.Config {
 	}
 
 	tlsConfig := &tls.Config{
-		RootCAs:      caCertPool,
-		ClientAuth:   tls.RequireAndVerifyClientCert,
-		ClientCAs:    caCertPool,
-		Certificates: []tls.Certificate{leafCert},
-		// PreferServerCipherSuites: true,
-		// MinVersion:               tls.VersionTLS13,
+		RootCAs:                  caCertPool,
+		ClientAuth:               tls.RequireAndVerifyClientCert,
+		ClientCAs:                caCertPool,
+		Certificates:             []tls.Certificate{leafCert},
+		PreferServerCipherSuites: true,
+		MinVersion:               tls.VersionTLS13,
 	}
 	tlsConfig.BuildNameToCertificate()
 	return tlsConfig
